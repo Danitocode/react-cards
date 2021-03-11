@@ -23,26 +23,26 @@ function App() {
       title: 'Forward Metrics AnalystChange Name',
       avatar: 'https://avatars.dicebear.com/api/male/.svg'
     }
-  ])
-  const [showCard, setShowCard] = useState(true)
-  const toggleShowCard = () => setShowCard(!showCard)
+  ]);
+  const [showCard, setShowCard] = useState(true);
+  const toggleShowCard = () => setShowCard(!showCard);
   const deleteCardHandler = (cardIndex) => {
-    const cards_copy = [...cards]
-    cards_copy.splice(cardIndex, 1)
-    console.log('cards_copy', cards_copy)
-    console.log('cards', cards)
-    setCards(cards_copy)
-
+    const cards_copy = [...cards];
+    console.log(cards_copy);
+    cards_copy.splice(cardIndex, 1);
+    console.log('cards_copy', cards_copy);
+    console.log('cards', cards);
+    setCards(cards_copy);
   }
   const changeNameHandler = (event, id) => {
     //1. which card
-    const cardIndex = cards.findIndex(card => card.id == id)
+    const cardIndex = cards.findIndex(card => card.id == id);
     //2. make a copy of the cards
-    const cards_copy = [...cards]
+    const cards_copy = [...cards];
     //3. change the name of the specific card
-    cards_copy[cardIndex].name = event.target.value
+    cards_copy[cardIndex].name = event.target.value;
     //4. set the cards with the latest version of card copy
-    setCards(cards_copy)
+    setCards(cards_copy);
   }
   const buttonStyle = {
     backgroundColor: null
